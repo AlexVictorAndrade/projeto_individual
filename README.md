@@ -1,1 +1,1 @@
-# projeto_idividual
+# projeto_individual
