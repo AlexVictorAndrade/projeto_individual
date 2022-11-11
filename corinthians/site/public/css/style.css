@@ -61,9 +61,11 @@ body {
 .banner {
   height: fit-content;
   padding: 105px 0;
-  color: white;
+  color: FFFCF2;
   background-image: url(".././assets/imgs/arena_index.jpg");
   background-size: cover;
+
+  background-position-x: 15px;
 }
 
 .banner .container {
@@ -120,16 +122,23 @@ footer {
 .banner .container .card {
   background: #252422ad;
   background-position: center;
-  background-size:cover;
+ 
   height: fit-content;
   width: 400px;
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   color: #FFFCF2;
   align-items: center;
   border-radius: 25px;
   padding-bottom: 50px;
+}
+
+.span_titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card {
@@ -139,6 +148,7 @@ footer {
 
 .card h2 {
   font-size: 40px;
+  text-align: center;
 }
 
 .card h4 {
@@ -152,6 +162,11 @@ footer {
 button {
   cursor: pointer;
 }
+
+.tipo_campo{
+  color: #FFFCF2;
+}
+
 
 /* FORMULARIO */
 
@@ -177,18 +192,30 @@ button {
   font-size: 20px;
 }
 
+.formulario{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 .formulario .tipo_campo {
   font-size: 20px;
   font-weight: 600 !important;
+  margin-right: 130px;
+  margin-bottom: 1rem;
 }
 
-.formulario {
+.formulario input {
   display: flex;
   flex-direction: column;
+  outline: none;
+  border: none;
+  background-color: #FFFCF2;
 }
 
 input {
-  margin-bottom: 10px;
   border: 2px solid #32b9cd;
   padding: 10px;
   text-align: center;
@@ -206,7 +233,8 @@ input {
   background-color: #FFFCF2;
   width: 120px;
   align-self: center;
-  margin-top: 5px;
+  margin-top: 3rem;
+
 }
 
 .loading-div {

@@ -6,29 +6,36 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE vamos_ver_o_timao;
 
-USE aquatech;
+USE vamos_ver_o_timao;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE torcedor (
+	idTorcedor INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
 CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idAviso INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+	fk_torcedor INT,
+	FOREIGN KEY (fk_torcedor) REFERENCES torcedor(idTorcedor)
 );
 
-create table aquario (
+create table selects (
 /* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
+	idSelects INT PRIMARY KEY AUTO_INCREMENT,
+	fk_torcedor INT,
+	FOREIGN KEY (fk_torcedor) REFERENCES torcedor(idTorcedor),
+	torce_corinthians VARCHAR(300),
+	emocao VARCHAR(300),
+	criancas_mulheres VARCHAR(300),
+	dinheiro VARCHAR(300),
+	visao_campo VARCHAR(300)
+--fazer tudo como chk constraint
 );
 
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
@@ -50,29 +57,29 @@ create table medida (
 comando para sql server - banco remoto - ambiente de produção
 */
 
-CREATE TABLE usuario (
+/*CREATE TABLE usuario (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50),
 );
 
-CREATE TABLE aviso (
+/*CREATE TABLE aviso (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
 	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
 );
 
-create table aquario (
+/*create table aquario (
 /* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
+/*	id INT PRIMARY KEY IDENTITY(1,1),
 	descricao VARCHAR(300)
 );
 
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
-CREATE TABLE medida (
+/*CREATE TABLE medida (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	dht11_umidade DECIMAL,
 	dht11_temperatura DECIMAL,
@@ -88,7 +95,7 @@ comandos para criar usuário em banco de dados azure, sqlserver,
 com permissão de insert + update + delete + select
 */
 
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
+/*CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
 WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
 DEFAULT_SCHEMA = dbo;
 
