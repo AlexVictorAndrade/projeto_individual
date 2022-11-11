@@ -89,9 +89,23 @@ body {
   font-weight: 800;
 }
 
+.botao_descobrir a{
+  text-decoration: none;
+  color: #252422;
+  display: flex;
+  margin-left: 750px;
+  margin-right: 350px;
+  height: 55px;
+  font-size:25px;
+  background-color: #FFFCF2;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
 
 
-/* FOOTER */
+
+/* FOOTER 
 
 footer {
   background-color: #FFFCF2;
@@ -99,19 +113,23 @@ footer {
   color: #252422;
   display: flex;
 
-}
+}/
 
 /* LOGIN */
 
 .banner .container .card {
-  background-color: #e5e5e5;
+  background: #252422ad;
+  background-position: center;
+  background-size:cover;
   height: fit-content;
   width: 400px;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  color: palevioletred;
+  color: #FFFCF2;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 25px;
+  padding-bottom: 50px;
 }
 
 .card {
@@ -120,7 +138,7 @@ footer {
 }
 
 .card h2 {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .card h4 {
@@ -180,12 +198,12 @@ input {
 .btn {
   font-family: "Barlow", sans-serif;
   border: 0;
-  border-radius: 5px;
+  border-radius: 25px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: #252422;
+  background-color: #FFFCF2;
   width: 120px;
   align-self: center;
   margin-top: 5px;
