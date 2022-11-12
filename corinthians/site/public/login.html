@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./saiba_mais.html">Simulador</a>
+                    <a href="./saiba_mais.html">Saiba mais</a>
                 </li>
                 <li>|</li>
                 <li class="agora">
@@ -92,7 +92,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Erro: preencha todos os campos para entrar";
             finalizarAguardar();
             return false;
         }

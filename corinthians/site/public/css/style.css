@@ -61,10 +61,9 @@ body {
 .banner {
   height: fit-content;
   padding: 105px 0;
-  color: FFFCF2;
+  color: #FFFCF2;
   background-image: url(".././assets/imgs/arena_index.jpg");
   background-size: cover;
-
   background-position-x: 15px;
 }
 
@@ -85,6 +84,7 @@ body {
   padding: 0;
   width: 900px;
   font-size: 100px;
+  color: #FFFCF2;
 }
 
 .banner .container span {
@@ -122,10 +122,9 @@ footer {
 .banner .container .card {
   background: #252422ad;
   background-position: center;
- 
+ text-align: center;
   height: fit-content;
   width: 400px;
-  height: 450px;
   display: flex;
   flex-direction: column;
   color: #FFFCF2;
@@ -165,6 +164,10 @@ button {
 
 .tipo_campo{
   color: #FFFCF2;
+  margin-left: 20px;
+}
+.confirmacao{
+margin-right: 0px !important;
 }
 
 
@@ -177,13 +180,13 @@ button {
 
 .card_erro {
   display: none;
-  background-color: #fff;
-  color: black;
+  background-color: #fffcf2ad;
+  color: 252422;
   width: 230px;
   position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
-  padding: 10px;
+  border-radius: 25px;
+  border: #252422 1px solid;
+  padding: 25px;
   margin-right: 10%;
 }
 
@@ -204,7 +207,7 @@ button {
   font-size: 20px;
   font-weight: 600 !important;
   margin-right: 130px;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .formulario input {
