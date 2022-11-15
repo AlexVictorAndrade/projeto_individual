@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --white: #FFFCF2;
+    --light_grey: #CCC5B9;
+    --grey: #403D39;
+    --black: #252422;
+    --red: red;
+  }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald';
+  background-color: var(--black);
+
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  border-bottom: 3px solid var(--white);
+}
+
+.header .container {
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: var(--white);
+}
+
+
+.titulo {
+  width: 105px;
+  height: 100px;
+}
+
+
+/* BANNER */
+
+.banner {
+  height: fit-content;
+  padding-bottom: 65px;
+  padding-top: 65px;
+
+  color: #FFFCF2;
+  background-image: url(".././assets/imgs/arena_index.jpg");
+  background-size: cover;
+  background-position-x: 15px;
+}
+x
+.banner .container {
+  height: 400px;
+  font-size: 36px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tamanho-conteudo { 
+  height: fit-content !important;
+}
+
+.banner p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 900px;
+  font-size: 100px;
+  color: var(--white);
+}
+
+.banner .container span {
+  font-weight: 800;
+}
+
+
+.banner .container .card {
+  background: #252422ad;
+  background-position: center;
+  text-align: center;
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  align-items: center;
+  border-radius: 25px;
+}
+
+.span_titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 35px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.card h4 {
+  font-size: 16px;
+}
+
+.banner #div_erros_login {
+  margin-top: 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.tipo_campo{
+  color: var(--white);
+  margin-left: 20px;
+}
+.confirmacao{
+margin-right: 0px !important;
+}
+
+
+/* FORMULARIO */
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fffcf2ad;
+  color: 252422;
+  width: 230px;
+  position: fixed;
+  border-radius: 25px;
+  border: #252422 1px solid;
+  padding: 25px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.formulario{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.formulario .tipo_campo {
+  font-size: 20px;
+  font-weight: 600 !important;
+  margin-right: 130px;
+  margin-top: 1rem;
+}
+
+.formulario input {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  border: none;
+  background-color: var(--white);
+}
+
+input {
+  border: 2px solid #32b9cd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #252422;
+  background-color: var(--white);
+  width: 120px;
+  align-self: center;
+  margin-top: 3rem;
+
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+

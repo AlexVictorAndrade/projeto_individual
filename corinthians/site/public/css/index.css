@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+  --white: #FFFCF2;
+  --light_grey: #CCC5B9;
+  --grey: #403D39;
+  --black: #252422;
+  --red: red;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald';
+  background-color: black;
+
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  border-bottom: 3px solid #FFFCF2;
+}
+
+.header .container {
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+  color: #FFFCF2;
+}
+
+.agora {
+  font-weight: 800;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #FFFCF2;
+}
+
+
+.titulo {
+  width: 105px;
+  height: 100px;
+}
+
+
+/* BANNER */
+
+.banner {
+  height: fit-content;
+  padding: 118px 0;
+  color: #FFFCF2;
+  background-image: url(".././assets/imgs/arena_index.jpg");
+  background-size: cover;
+  background-position-x: 15px;
+}
+x
+.banner .container {
+  height: 400px;
+  font-size: 36px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tamanho-conteudo { 
+  height: fit-content !important;
+}
+
+.banner p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 900px;
+  font-size: 100px;
+  color: #FFFCF2;
+}
+
+.banner .container span {
+  font-weight: 800;
+}
+
+.botao_descobrir a{
+  text-decoration: none;
+  color: #252422;
+  display: flex;
+  margin-left: 750px;
+  margin-right: 350px;
+  margin-top: 30px;
+  height: 55px;
+  font-size:25px;
+  background-color: #FFFCF2;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+
