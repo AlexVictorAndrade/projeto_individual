@@ -26,7 +26,8 @@ body {
 }
 
 .header {
-  border-bottom: 3px solid #FFFCF2;
+  border-bottom: 1vh solid #FFFCF2;
+  height: 15vh;
 }
 
 .header .container {
@@ -53,20 +54,19 @@ body {
 
 
 .titulo {
-  width: 105px;
-  height: 100px;
+  height: 15vh;
 }
 
 
 /* BANNER */
 
 .banner {
-  height: fit-content;
-  padding: 118px 0;
+  height: 84vh;
   color: #FFFCF2;
   background-image: url(".././assets/imgs/arena_index.jpg");
   background-size: cover;
   background-position-x: 15px;
+  background-position-y: -100px;
 }
 x
 .banner .container {
@@ -87,6 +87,7 @@ x
   width: 900px;
   font-size: 100px;
   color: #FFFCF2;
+  margin-top: 3.5rem;
 }
 
 .banner .container span {
