@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Oswald';
-  background-color: var(--black);
+  background-color: #1b1a1a ;
 
 }
 
@@ -24,7 +24,8 @@ body {
 }
 
 .header {
-  border-bottom: 3px solid var(--white);
+  border-bottom: 1vh solid var(--white);
+  height: 15vh;
 }
 
 .header .container {
@@ -51,22 +52,19 @@ body {
 
 
 .titulo {
-  width: 105px;
-  height: 100px;
+  height: 15vh;
 }
 
 
 /* BANNER */
 
 .banner {
-  height: fit-content;
-  padding-bottom: 65px;
-  padding-top: 65px;
-
+  height: 84vh;
   color: #FFFCF2;
   background-image: url(".././assets/imgs/arena_index.jpg");
   background-size: cover;
   background-position-x: 15px;
+  background-position-y: -100px;
 }
 x
 .banner .container {
@@ -105,6 +103,7 @@ x
   color: var(--white);
   align-items: center;
   border-radius: 25px;
+  margin-top: 55px;
 }
 
 .span_titulo{
@@ -112,7 +111,8 @@ x
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 35px;
+  font-size: 33px;
+  margin-top: 30px;
 }
 
 .card {
@@ -211,7 +211,7 @@ input {
   background-color: var(--white);
   width: 120px;
   align-self: center;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 
 }
 

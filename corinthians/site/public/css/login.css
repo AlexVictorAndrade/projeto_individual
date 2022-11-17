@@ -12,19 +12,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Oswald';
-  background-color: black;
+  background-color: #1b1a1a;
 
 }
 
 .container {
   width: 80%;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .header {
-  border-bottom: 3px solid #FFFCF2;
+  border-bottom: 1vh solid #FFFCF2;
+  height: 15vh;
 }
 
 .header .container {
@@ -51,20 +54,19 @@ body {
 
 
 .titulo {
-  width: 105px;
-  height: 100px;
+  height: 15vh;
 }
 
 
 /* BANNER */
 
 .banner {
-  height: fit-content;
-  padding: 82px 0;
+  height: 84vh;
   color: #FFFCF2;
   background-image: url(".././assets/imgs/arena_index.jpg");
   background-size: cover;
   background-position-x: 15px;
+  background-position-y: -100px;
 }
 x
 .banner .container {
