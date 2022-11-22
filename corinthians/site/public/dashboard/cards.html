@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="atualizacaoPeriodica()">
+<body >
     <!--validarSessao(), (colocar isso dentro do onload dps que tudo estiver pronto)-->
 
     <div class="janela">
@@ -37,14 +37,8 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Experiências na Arena</h3>
                 </a>
             </div>
 
@@ -57,23 +51,23 @@
         <div class="dash">
             <div class="regua">
                 <div class="item-regua">
-                    <h4>Norte</h4>
+                    <h3>Norte</h3>
                     <h2>900 pessoas</h2>
                 </div>
                 <div class="item-regua">
-                    <h4>Sul</h4>
+                    <h3>Sul</h3>
                     <h2>700 pessoas</h2>
                 </div>
                 <div class="item-regua">
-                    <h4>Leste</h4>
+                    <h3>Leste</h3>
                     <h2>500 pessoas</h2>
                 </div>
                 <div class="item-regua">
-                    <h4>Oeste</h4>
+                    <h3>Oeste</h3>
                     <h2>200 pessoas</h2>
                 </div>
                 <div class="item-regua">
-                    <h4>Oeste Business</h4>
+                    <h3>Oeste Business</h3>
                     <h2>50 pessoas</h2>
                 </div>
             </div>
@@ -140,7 +134,7 @@
                 </div>
             </div>
             <div class="botao_conferir_container">
-                <button class="botao_conferir" onclick="conferirTeste()">Conferir</button>
+                <button class="botao_conferir" onclick="conferirTeste(), salvarSetor()">Conferir</button>
             </div>
             <div class="resultado_selects" id="div_resultado_conferir"></div>
             </div>
@@ -150,7 +144,9 @@
             </body>
             
             <script>
-            
+
+                var setorTorcedor = ''
+                
                 function conferirTeste() {
                     var torce = idSelect1.value
                     var crianca = idSelect2.value
@@ -165,55 +161,56 @@
                     if (torce == "nao") {
                         div_resultado_conferir.innerHTML = ''
                         div_resultado_conferir.innerHTML = 'visitante'
+                        setorTorcedor= 'visitante';
                     }
             
                     else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "sim") {
                         div_resultado_conferir.innerHTML = ''
                         div_resultado_conferir.innerHTML = 'norte'
+                        setorTorcedor= 'norte';
                     }
             
                     else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "nao") {
                         div_resultado_conferir.innerHTML = ''
                         div_resultado_conferir.innerHTML = 'sul'
+                        setorTorcedor= 'sul';
                     }
             
                     else if (torce == "sim" && nvlPrivacidade == 4 && crianca == "sim" && dinheiro == 2 && visaoCampo == "horizontal" && organizadas == "nao") {
                         div_resultado_conferir.innerHTML = ''
                         div_resultado_conferir.innerHTML = 'leste'
+                        setorTorcedor= 'leste';
                     }
             
                     else if (torce == "sim" && nvlPrivacidade == 3 && crianca == "sim" && dinheiro == 3 && visaoCampo == "horizontal" && organizadas == "nao") {
                         div_resultado_conferir.innerHTML = ''
                         div_resultado_conferir.innerHTML = 'oeste'
+                        setorTorcedor= 'oeste';
                     }
             
                     else if (torce == "sim" && nvlPrivacidade == 1 && crianca == "sim" && dinheiro == 5 && visaoCampo == "horizontal" && organizadas == "nao") {
                         div_resultado_conferir.innerHTML = ''
                         div_resultado_conferir.innerHTML = 'oesteB'
+                        setorTorcedor= 'oesteB';
                     }
                     console.log(torce, nvlPrivacidade, crianca, dinheiro, visaoCampo, organizadas)
                 }
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
+    // function atualizacaoPeriodica() {
+    //     obterdados(1);
+    //     obterdados(2);
+    //     obterdados(3);
+    //     obterdados(4);
 
-        function sendData() {
-            var http = new XMLHttpRequest();
-            http.open('POST', 'http://localhost:3000/api/sendData', false);
-            http.send(null);
-        }
 
-        setInterval(() => {
-            sendData();
-        }, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
+    //     setInterval(() => {
+    //         sendData();
+    //     }, 2000);
+    //     setTimeout(atualizacaoPeriodica, 5000);
+    // }
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
+    function obterdados() {
+        fetch(`/medidas/contagem`)
             .then(resposta => {
 
                 if (resposta.ok) {
@@ -222,7 +219,7 @@
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                         var dados = {
-                            temperatura: resposta[0].temperatura,
+                            quantidade: resposta[0].pessoas ,
                         }
 
                         alertar(resposta[0].temperatura, idAquario);
@@ -289,6 +286,38 @@
         // alterando
         card.className = classe_temperatura;
 
+    }
+
+    var idUsuario = sessionStorage.getItem("ID_USUARIO")
+    function salvarSetor() {
+
+        
+        fetch("/medidas/salvarSetor", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              idUsuario : idUsuario,
+              setorTorcedor : setorTorcedor
+              
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+            alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
     }
 
 </script>

@@ -7,8 +7,11 @@ router.get("/ultimas/:idAquario", function (req, res) {
     medidaController.buscarUltimasMedidas(req, res);
 });
 
-router.get("/tempo-real/:idAquario", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
+router.get("/contagem", function (req, res) {
+    medidaController.buscarMedidas(req, res);
 })
 
+router.post("/salvarSetor", function (req, res) {
+    medidaController.salvarSetor(req, res);
+})
 module.exports = router;

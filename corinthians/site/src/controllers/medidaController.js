@@ -41,8 +41,42 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+function salvarSetor(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+   var idUsuario = req.body.idUsuario;
+   var setorTorcedor = req.body.setorTorcedor;
+    
+    // Faça as validações dos valores
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    } else if (setorTorcedor == undefined) {
+        res.status(400).send("Seu setorTorcedor está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        medidaModel.salvarSetor(setorTorcedor, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    salvarSetor
 
 }
