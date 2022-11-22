@@ -2,13 +2,13 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/escudo_corinthians2.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste de arquibancada | Arena Corinthians</title>
 
-    <!--<link rel="stylesheet" href="../css/style.css">--> 
+    <!--<link rel="stylesheet" href="../css/style.css">-->
     <link rel="stylesheet" href="../css/dashboards.css">
 
     <script src="../js/funcoes.js"></script>
@@ -26,14 +26,14 @@
 
         <div class="header-left dash-header">
 
-            <h1>AquaTech</h1>
+            <h1>Vamos ver o Timão</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>Teste de arquibancada</h3>
             </div>
 
             <div class="btn-nav-white">
@@ -56,68 +56,143 @@
 
         <div class="dash">
             <div class="regua">
-                <div class="item-regua perigo-frio">
+                <div class="item-regua">
                     <h4>Norte</h4>
                     <h2>900 pessoas</h2>
                 </div>
-                <div class="item-regua alerta-frio">
+                <div class="item-regua">
                     <h4>Sul</h4>
                     <h2>700 pessoas</h2>
                 </div>
-                <div class="item-regua ideal">
+                <div class="item-regua">
                     <h4>Leste</h4>
                     <h2>500 pessoas</h2>
                 </div>
-                <div class="item-regua alerta-quente">
+                <div class="item-regua">
                     <h4>Oeste</h4>
                     <h2>200 pessoas</h2>
                 </div>
-                <div class="item-regua perigo-quente">
+                <div class="item-regua">
                     <h4>Oeste Business</h4>
                     <h2>50 pessoas</h2>
                 </div>
             </div>
 
-            <div class="cards"> <!-- fazer os selects nessa div -->
+            <div class="cards">
                 <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
+                    <h1>Torce para o Corinthians?</h1>
+                    <div class="select1">
+                        <select id="idSelect1">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
                     </div>
-                    <div class="cor-alerta" id="card_1"></div>
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
+                    <h1>Estará com crianças ou mulheres?</h1>
+                    <div class="select2">
+                        <select id="idSelect2">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
                     </div>
-                    <div class="cor-alerta" id="card_2"></div>
-
+            
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
+                    <h1>Quer estar perto das torcidas organizadas?</h1>
+                    <div class="select3">
+                        <select id="idSelect3">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
                     </div>
-                    <div class="cor-alerta ideal" id="card_3"></div>
                 </div>
                 <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
+                    <h1>Qual a visão do campo que você prefere?</h1>
+                    <div class="select4">
+                        <select id="idSelect4">
+                            <option value="horizontal">Horizontal</option>
+                            <option value="vertical">Vertical</option>
+                        </select>
                     </div>
-                    <div class="cor-alerta" id="card_4"></div>
                 </div>
-
+                <div class="card">
+                    <h1>Quanto você está disposto a gastar?</h1>
+                    <div class="select5">
+                        <select id="idSelect5">
+                            <option value="1">$</option>
+                            <option value="2">$$</option>
+                            <option value="3">$$$</option>
+                            <option value="5">$$$$$</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card">
+                    <h1>Qual o nível de emoção que você quer?</h1>
+                    <div class="select6">
+                        <select id="idSelect6">
+                            <option value="3">***</option>
+                            <option value="4">****</option>
+                            <option value="5">*****</option>
+                            <option value="1">Quero ter privacidade</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-
-        </div>
-    </div>
-
-
-</body>
-
-<script>
+            <div class="botao_conferir_container">
+                <button class="botao_conferir" onclick="conferirTeste()">Conferir</button>
+            </div>
+            <div class="resultado_selects" id="div_resultado_conferir"></div>
+            </div>
+            </div>
+            
+            
+            </body>
+            
+            <script>
+            
+                function conferirTeste() {
+                    var torce = idSelect1.value
+                    var crianca = idSelect2.value
+                    var organizadas = idSelect3.value
+                    var visaoCampo = idSelect4.value
+                    var dinheiro = Number(idSelect5.value)
+                    var nvlPrivacidade = Number(idSelect6.value)
+            
+            
+                    div_resultado_conferir.innerHTML = 'nao foi possivel achar um setor perfeito para voce'
+                    
+                    if (torce == "nao") {
+                        div_resultado_conferir.innerHTML = ''
+                        div_resultado_conferir.innerHTML = 'visitante'
+                    }
+            
+                    else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "sim") {
+                        div_resultado_conferir.innerHTML = ''
+                        div_resultado_conferir.innerHTML = 'norte'
+                    }
+            
+                    else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "nao") {
+                        div_resultado_conferir.innerHTML = ''
+                        div_resultado_conferir.innerHTML = 'sul'
+                    }
+            
+                    else if (torce == "sim" && nvlPrivacidade == 4 && crianca == "sim" && dinheiro == 2 && visaoCampo == "horizontal" && organizadas == "nao") {
+                        div_resultado_conferir.innerHTML = ''
+                        div_resultado_conferir.innerHTML = 'leste'
+                    }
+            
+                    else if (torce == "sim" && nvlPrivacidade == 3 && crianca == "sim" && dinheiro == 3 && visaoCampo == "horizontal" && organizadas == "nao") {
+                        div_resultado_conferir.innerHTML = ''
+                        div_resultado_conferir.innerHTML = 'oeste'
+                    }
+            
+                    else if (torce == "sim" && nvlPrivacidade == 1 && crianca == "sim" && dinheiro == 5 && visaoCampo == "horizontal" && organizadas == "nao") {
+                        div_resultado_conferir.innerHTML = ''
+                        div_resultado_conferir.innerHTML = 'oesteB'
+                    }
+                    console.log(torce, nvlPrivacidade, crianca, dinheiro, visaoCampo, organizadas)
+                }
 
     function atualizacaoPeriodica() {
         obterdados(1);
@@ -126,14 +201,14 @@
         obterdados(4);
 
         function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
+        }
 
         setInterval(() => {
-			sendData();
-		}, 2000);
+            sendData();
+        }, 2000);
         setTimeout(atualizacaoPeriodica, 5000);
     }
 
