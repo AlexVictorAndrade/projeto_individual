@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Oswald';
-  background-color:#1b1a1a;
+  background-color: var(--black);
 
 }
 
@@ -57,41 +57,6 @@ body {
 }
 
 
-/* BANNER */
-
-.banner {
-  height: fit-content;
-  padding: 105px 0;
-  color: #FFFCF2;
-  background-image: url(".././assets/imgs/arena_index.jpg");
-  background-size: cover;
-  background-position-x: 15px;
-}
-x
-.banner .container {
-  height: 400px;
-  font-size: 36px;
-  justify-content: center;
-  align-items: center;
-}
-
-.tamanho-conteudo { 
-  height: fit-content !important;
-}
-
-.banner p {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  width: 900px;
-  font-size: 100px;
-  color: #FFFCF2;
-}
-
-.banner .container span {
-  font-weight: 800;
-}
-
 .botao_chamada{
   text-decoration: none;
   color: #252422;
@@ -104,4 +69,6 @@ x
   justify-content: center;
   align-items: center;
   border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
 }

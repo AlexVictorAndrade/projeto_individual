@@ -66,9 +66,10 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: var(--black);
+  background-color: var(--light_grey);
   width: 120px;
+  font-weight: 700;
 }
 
 .publicacao-btn-editar {
@@ -148,8 +149,8 @@ body {
   text-align: center;
   padding-top: 15px;
   border-radius: 30px;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: #212124;
+  color: white;
 }
 
 .cards {
@@ -196,8 +197,19 @@ justify-content: center;
 
 }
 .botao_conferir{
-  background-color: #e6005a;
-}
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px
+  }
 
 .resultado_selects{
 color: #FFFCF2;
@@ -462,7 +474,7 @@ margin-right: 0px !important;
 }
 
 input {
-  border: 2px solid #32b9cd;
+  border: 2px solid var(--red);
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -517,7 +529,7 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid var(--red);
   background-color: #212124;
   /* border: 3px solid pink; */
 }
@@ -533,7 +545,7 @@ input {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: var(--white);
 }
 
 .hello {
@@ -543,7 +555,7 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: var(--white);
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -554,8 +566,8 @@ input {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
+  color: var(--black);
+  background-color: var(--light_grey);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -563,15 +575,15 @@ input {
 
 .btn-nav-white {
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+  background-color: var(--white);
+  border: 3px solid var(--light_grey);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: var(--black);
   padding: 0;
   margin: 0;
 }
@@ -586,8 +598,8 @@ input {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  background-color: var(--white);
+  color: var(--black);
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
@@ -597,7 +609,7 @@ input {
 
 /* pagina extra - simulador */
 .simulador {
-  color: white;
+  color: var(--white);
 
 }
 
