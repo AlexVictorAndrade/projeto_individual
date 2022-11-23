@@ -15,6 +15,22 @@ body {
   font-family: "Exo 2", sans-serif;
 }
 
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 36px;
+    border: 1px none #ff0000;
+  }
+
 .avisoCaptura {
   display: flex;
   justify-content: center;
@@ -126,12 +142,14 @@ body {
 }
 
 .dash {
-  width: 75%;
+  width: 100%;
   position: relative;
   top: 0;
-  left: 25%;
   background-color: #161618;
   height: fit-content;
+  background-image: url(".././assets/imgs/roger_guedes_torcida.jpg");
+  background-size:contain;
+  background-repeat: no-repeat;
 }
 
 .regua {
@@ -183,11 +201,12 @@ body {
 
 .cards h1 {
   font-size: 22px;
-  width: 100%;
-  border-bottom: solid white 1px;
-  text-align: left;
-  font-weight: lighter;
-  margin: 20px;
+    width: 100%;
+    border-bottom: solid white 1px;
+    text-align: center;
+    font-weight: 600;
+    margin: 20px;
+    color: var(--white);
 }
 
 .botao_conferir_container{
@@ -200,15 +219,17 @@ justify-content: center;
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--red);
+  color: var(--white);
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
   font-weight: 700;
-  font-size: 20px
+  font-size: 20px;
+  outline: none;
+  border: none;
   }
 
 .resultado_selects{
@@ -510,7 +531,8 @@ input {
 
 .janela {
   display: flex;
-  width: 100vw;
+  flex-direction: column;
+  width: 99.4vw;
 }
 
 .header-left a {
@@ -519,19 +541,14 @@ input {
 }
 
 .header-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 25%;
+  height: 15vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid var(--red);
-  background-color: #212124;
-  /* border: 3px solid pink; */
+  border-bottom: 3px solid var(--red);
+  background-color: #fff0;
 }
 
 .dash-right {
@@ -603,7 +620,6 @@ input {
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
-  margin-bottom: 100px;
   cursor: pointer;
 }
 
