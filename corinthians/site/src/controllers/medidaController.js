@@ -22,13 +22,13 @@ function buscarUltimasMedidas(req, res) {
 }
 
 
-function buscarMedidasEmTempoReal(req, res) {
+function buscarMedidas(req, res) {
 
-    var idTorcedor = req.params.idTorcedor;
+    var setor = req.params.setor;
 
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.buscarMedidasEmTempoReal(idAquario).then(function (resultado) {
+    medidaModel.buscarMedidas(setor).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -76,7 +76,7 @@ function salvarSetor(req, res) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal,
+    buscarMedidas,
     salvarSetor
 
 }

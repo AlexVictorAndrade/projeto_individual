@@ -18,58 +18,63 @@
         rel="stylesheet">
 </head>
 
-<body >
+<body onload="atualizacaoPeriodica()">
+
     <!--validarSessao(), (colocar isso dentro do onload dps que tudo estiver pronto)-->
 
-    
+
     <div class="dash">
-            <div class="janela">
-        
-        
-                <div class="header-left dash-header">
-        
-                    <img class="titulo" src="../assets/imgs/escudo_corinthians2.png">
-        
-                    <div class="hello">
-                        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-                    </div>
-        
-                    <div class="btn-nav">
-                        <h3>Teste de arquibancada</h3>
-                    </div>
-        
-                    <div class="btn-nav-white">
-                        <a href="./mural.html">
-                            <h3>Experiências na Arena</h3>
-                        </a>
-                    </div>
-        
-                    <div class="btn-logout" onclick="limparSessao()">
-                        <h3>Sair</h3>
-                    </div>
-        
+        <div class="janela">
+
+
+            <div class="header-left dash-header">
+
+                <img class="titulo" src="../assets/imgs/escudo_corinthians2.png">
+
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
                 </div>
+
+                <div class="btn-nav">
+                    <h3>Teste de arquibancada</h3>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./mural.html">
+                        <h3>Experiências na Arena</h3>
+                    </a>
+                </div>
+
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+
+            </div>
 
             <div class="regua">
                 <div class="item-regua">
                     <h3>Norte</h3>
-                    <h2>900 pessoas</h2>
+                    <h2><span id="cardNorte">0</span> pessoas</h2>
                 </div>
                 <div class="item-regua">
                     <h3>Sul</h3>
-                    <h2>700 pessoas</h2>
+                    <h2><span id="cardSul">0</span> pessoas</h2>
                 </div>
                 <div class="item-regua">
                     <h3>Leste</h3>
-                    <h2>500 pessoas</h2>
+                    <h2><span id="cardLeste">0</span> pessoas</h2>
                 </div>
                 <div class="item-regua">
                     <h3>Oeste</h3>
-                    <h2>200 pessoas</h2>
+                    <h2><span id="cardOeste">0</span> pessoas</h2>
                 </div>
                 <div class="item-regua">
                     <h3>Oeste Business</h3>
-                    <h2>50 pessoas</h2>
+                    <h2><span id="cardOesteB">0</span> pessoas</h2>
+                </div>
+                <div class="item-regua">
+                    <h3>Visitante</h3>
+                    <h2><span id="cardVisitante">0</span> pessoas</h2>
                 </div>
             </div>
 
@@ -91,7 +96,7 @@
                             <option value="nao">Não</option>
                         </select>
                     </div>
-            
+
                 </div>
                 <div class="card">
                     <h1>Quer estar perto das torcidas organizadas?</h1>
@@ -138,80 +143,82 @@
                 <button class="botao_conferir" onclick="conferirTeste(), salvarSetor()">Conferir</button>
             </div>
             <div class="resultado_selects" id="div_resultado_conferir"></div>
-            </div>
-            </div>
-            
-            
-            </body>
-            
-            <script>
+            <div class=boxImg id="boxImg"><img id="imagemSetor" src="../assets/imgs/setores_vazio.svg" height="200px"></div>
 
-                var setorTorcedor = ''
-                
-                function conferirTeste() {
-                    var torce = idSelect1.value
-                    var crianca = idSelect2.value
-                    var organizadas = idSelect3.value
-                    var visaoCampo = idSelect4.value
-                    var dinheiro = Number(idSelect5.value)
-                    var nvlPrivacidade = Number(idSelect6.value)
-            
-            
-                    div_resultado_conferir.innerHTML = '<img class="titulo" src="../assets/imgs/escudo_corinthians2.png">'
-                    
-                    if (torce == "nao") {
-                        div_resultado_conferir.innerHTML = ''
-                        div_resultado_conferir.innerHTML = 'visitante'
-                        setorTorcedor= 'visitante';
-                    }
-            
-                    else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "sim") {
-                        div_resultado_conferir.innerHTML = ''
-                        div_resultado_conferir.innerHTML = 'norte'
-                        setorTorcedor= 'norte';
-                    }
-            
-                    else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "nao") {
-                        div_resultado_conferir.innerHTML = ''
-                        div_resultado_conferir.innerHTML = 'sul'
-                        setorTorcedor= 'sul';
-                    }
-            
-                    else if (torce == "sim" && nvlPrivacidade == 4 && crianca == "sim" && dinheiro == 2 && visaoCampo == "horizontal" && organizadas == "nao") {
-                        div_resultado_conferir.innerHTML = ''
-                        div_resultado_conferir.innerHTML = 'leste'
-                        setorTorcedor= 'leste';
-                    }
-            
-                    else if (torce == "sim" && nvlPrivacidade == 3 && crianca == "sim" && dinheiro == 3 && visaoCampo == "horizontal" && organizadas == "nao") {
-                        div_resultado_conferir.innerHTML = ''
-                        div_resultado_conferir.innerHTML = 'oeste'
-                        setorTorcedor= 'oeste';
-                    }
-            
-                    else if (torce == "sim" && nvlPrivacidade == 1 && crianca == "sim" && dinheiro == 5 && visaoCampo == "horizontal" && organizadas == "nao") {
-                        div_resultado_conferir.innerHTML = ''
-                        div_resultado_conferir.innerHTML = 'oesteB'
-                        setorTorcedor= 'oesteB';
-                    }
-                    console.log(torce, nvlPrivacidade, crianca, dinheiro, visaoCampo, organizadas)
-                }
-
-    // function atualizacaoPeriodica() {
-    //     obterdados(1);
-    //     obterdados(2);
-    //     obterdados(3);
-    //     obterdados(4);
+        </div>
+    </div>
 
 
-    //     setInterval(() => {
-    //         sendData();
-    //     }, 2000);
-    //     setTimeout(atualizacaoPeriodica, 5000);
-    // }
+</body>
 
-    function obterdados() {
-        fetch(`/medidas/contagem`)
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    var setorTorcedor = ''
+
+    function conferirTeste() {
+        var torce = idSelect1.value
+        var crianca = idSelect2.value
+        var organizadas = idSelect3.value
+        var visaoCampo = idSelect4.value
+        var dinheiro = Number(idSelect5.value)
+        var nvlPrivacidade = Number(idSelect6.value)
+
+
+
+        if (torce == "nao") {
+            div_resultado_conferir.innerHTML = ''
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o visitante'
+            setorTorcedor = 'visitante';
+            imagemSetor.innerHTML = `<img id="imagemSetor" src="../assets/imgs/setores_leste.svg" height="200px">`
+        }
+
+        else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "sim") {
+            div_resultado_conferir.innerHTML = ''
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o norte'
+            setorTorcedor = 'norte';
+        }
+
+        else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "nao") {
+            div_resultado_conferir.innerHTML = ''
+            div_resultado_conferir.innerHTML = 'sul'
+            setorTorcedor = 'sul';
+        }
+
+        else if (torce == "sim" && nvlPrivacidade == 4 && crianca == "sim" && dinheiro == 2 && visaoCampo == "horizontal" && organizadas == "nao") {
+            div_resultado_conferir.innerHTML = ''
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o leste'
+            setorTorcedor = 'leste';
+            imagemSetor.src= "../assets/imgs/setores_leste.svg"
+        }
+
+        else if (torce == "sim" && nvlPrivacidade == 3 && crianca == "sim" && dinheiro == 3 && visaoCampo == "horizontal" && organizadas == "nao") {
+            div_resultado_conferir.innerHTML = ''
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o oeste'
+            setorTorcedor = 'oeste';
+        }
+
+        else if (torce == "sim" && nvlPrivacidade == 1 && crianca == "sim" && dinheiro == 5 && visaoCampo == "horizontal" && organizadas == "nao") {
+            div_resultado_conferir.innerHTML = ''
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o oeste business'
+            setorTorcedor = 'oesteB';
+        }
+
+    }
+
+    function atualizacaoPeriodica() {
+        obterdados('norte');
+        obterdados('sul');
+        obterdados('leste');
+        obterdados('oeste');
+        obterdados('oesteB');
+        obterdados('visitante');
+
+
+
+    }
+    function obterdados(setor) {
+        fetch(`/medidas/contagem/${setor}`)
             .then(resposta => {
 
                 if (resposta.ok) {
@@ -220,10 +227,10 @@
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                         var dados = {
-                            quantidade: resposta[0].pessoas ,
+                            quantidade: resposta[0].quantidade,
                         }
 
-                        alertar(resposta[0].temperatura, idAquario);
+                        plotar(resposta[0].quantidade, setor);
                     });
                 } else {
 
@@ -236,72 +243,42 @@
 
     }
 
-    function alertar(temperatura, idAquario) {
-        var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
-        };
+    function plotar(quantidade, setor) {
 
-        var classe_temperatura = 'cor-alerta';
-
-        if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'cor-alerta perigo-quente';
-            console.log("caiu no 1")
-        }
-        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'cor-alerta alerta-quente';
-            console.log("caiu no 2")
-        }
-        else if (temperatura < limites.quente && temperatura > limites.frio) {
-            classe_temperatura = 'cor-alerta ideal';
-            console.log("caiu no 3")
-        }
-        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'cor-alerta alerta-frio';
-            console.log("caiu no 4")
-        }
-        else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'cor-alerta perigo-frio';
-            console.log("caiu no 5")
+        if (setor == 'visitante') {
+            cardVisitante.innerHTML = quantidade;
+             
+        } else if (setor == 'norte') {
+            cardNorte.innerHTML = quantidade;
+            
+        } else if (setor == 'sul') {
+            cardSul.innerHTML = quantidade;
+             
+        } else if (setor == 'leste') {
+            cardLeste.innerHTML = quantidade;
+        } else if (setor == 'oeste') {
+            cardOeste.innerHTML = quantidade;
+        } 
+        else if (setor == 'oesteB') {
+            cardOesteB.innerHTML = quantidade;
         }
 
-        var card;
-
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
-            card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
-            card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
-            card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
-            card = card_4
-        }
-
-        // alterando
-        card.className = classe_temperatura;
 
     }
 
     var idUsuario = sessionStorage.getItem("ID_USUARIO")
     function salvarSetor() {
 
-        
+
         fetch("/medidas/salvarSetor", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-              idUsuario : idUsuario,
-              setorTorcedor : setorTorcedor
-              
+                idUsuario: idUsuario,
+                setorTorcedor: setorTorcedor
+
             })
         }).then(function (resposta) {
 
@@ -309,7 +286,7 @@
 
             if (resposta.ok) {
 
-            alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+            atualizacaoPeriodica();
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
