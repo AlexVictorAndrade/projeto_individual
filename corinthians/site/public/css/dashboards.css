@@ -142,13 +142,12 @@ body {
 }
 
 .dash {
-  width: 100%;
   position: relative;
   top: 0;
   background-color: #161618;
   height: fit-content;
   background-image: url(".././assets/imgs/roger_guedes_torcida.jpg");
-  background-size:contain;
+  background-size:100vw;
   background-repeat: no-repeat;
 }
 
@@ -181,8 +180,8 @@ body {
 }
 
 .card {
-  margin: 2%;
-  width: 40%;
+  margin: 1%;
+  width: 30%;
   flex-wrap: wrap;
   display: flex;
   text-align: center;
@@ -224,7 +223,7 @@ justify-content: center;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
   cursor: pointer;
   font-weight: 700;
   font-size: 20px;
@@ -547,7 +546,6 @@ input {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom: 3px solid var(--red);
   background-color: #fff0;
 }
 
@@ -558,7 +556,6 @@ input {
   background-color: #161618;
   position: relative;
   top: 0;
-  left: 25%;
 }
 
 .header-left h1 {
@@ -566,7 +563,6 @@ input {
 }
 
 .hello {
-  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -582,21 +578,21 @@ input {
 }
 
 .btn-nav {
-  width: 40%;
+  width: 20%;
+  background-color: var(--white);
   color: var(--black);
-  background-color: var(--light_grey);
-  border-radius: 5px;
+  border-radius: 30px;
   text-align: center;
-  padding: 2% 5%;
+  padding: 10px 0;
 }
 
 .btn-nav-white {
-  width: 40%;
+  width: 20%;
   background-color: var(--white);
-  border: 3px solid var(--light_grey);
+  color: var(--light_grey);
   border-radius: 5px;
   text-align: center;
-  padding: 2% 5%;
+  padding: 10px 0;
 }
 
 .btn-nav-white h3 {
@@ -614,8 +610,8 @@ input {
 .btn-logout {
   margin: 0;
   padding: 0;
-  width: 20%;
-  background-color: var(--white);
+  width: 10%;
+  background-color: var(--light_grey);
   color: var(--black);
   border-radius: 10px;
   text-align: center;
@@ -623,12 +619,9 @@ input {
   cursor: pointer;
 }
 
-/* pagina extra - simulador */
-.simulador {
-  color: var(--white);
+.resultado_selects{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-}
-
-.simulador .container {
-  flex-direction: column
 }
