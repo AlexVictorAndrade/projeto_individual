@@ -38,7 +38,6 @@ body {
 
 .dash-right .avisos {
   width: 100%;
-  /* border: 3px solid pink; */
   color: rgb(216, 216, 216);
   font-family: "Exo 2", sans-serif;
 }
@@ -72,6 +71,7 @@ body {
   border: 2px solid var(--red);
   background-color: white;
   border-radius: 5px;
+  padding: 10px 0;
 }
 
 .dash-right .avisos .div-form button {
@@ -495,7 +495,7 @@ margin-right: 0px !important;
 
 input {
   border: 2px solid var(--red);
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
   border-radius: 10px;
 }
@@ -531,7 +531,6 @@ input {
 .janela {
   display: flex;
   flex-direction: column;
-  width: 99.4vw;
 }
 
 .header-left a {
@@ -551,7 +550,6 @@ input {
 
 .dash-right {
   display: flex;
-  width: 75%;
   height: fit-content;
   background-color: #161618;
   position: relative;
