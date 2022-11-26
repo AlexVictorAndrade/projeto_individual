@@ -231,8 +231,29 @@ justify-content: center;
   border: none;
   }
 
+.box_resultado_selects{
+  display: flex;
+  justify-content: center;
+}
+
 .resultado_selects{
+margin-top: 40px;
 color: #FFFCF2;
+background-color: #21212470;
+display: flex;
+width: 70%;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.boxImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin-top: 0px;
+  border-bottom: 6px solid var(--white);
 
 }
 
@@ -381,17 +402,6 @@ x
 }
 
 
-
-/* FOOTER 
-
-footer {
-  background-color: #FFFCF2;
-  height: 7px;
-  color: #252422;
-  display: flex;
-
-}/
-
 /* LOGIN */
 
 .banner .container .card {
@@ -531,6 +541,7 @@ input {
 .janela {
   display: flex;
   flex-direction: column;
+  border-bottom: 6px solid var(--white);
 }
 
 .header-left a {

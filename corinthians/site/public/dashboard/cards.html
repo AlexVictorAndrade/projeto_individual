@@ -142,11 +142,11 @@
             <div class="botao_conferir_container">
                 <button class="botao_conferir" onclick="conferirTeste(), salvarSetor()">Conferir</button>
             </div>
-            <div class="resultado_selects" id="div_resultado_conferir"></div>
-            <div class=boxImg id="boxImg"><img id="imagemSetor" src="../assets/imgs/setores_vazio.svg" height="200px"></div>
-
+            
         </div>
     </div>
+    <div class="box_resultado_selects"><h1 class="resultado_selects" id="div_resultado_conferir"></h1></div>
+    <div class=boxImg id="boxImg"><img id="imagemSetor" height="500px"></div>
 
 
 </body>
@@ -167,41 +167,60 @@
 
 
         if (torce == "nao") {
-            div_resultado_conferir.innerHTML = ''
-            div_resultado_conferir.innerHTML = 'O melhor setor para você é o visitante'
+            div_resultado_conferir.innerHTML = '';
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o visitante';
             setorTorcedor = 'visitante';
-            imagemSetor.innerHTML = `<img id="imagemSetor" src="../assets/imgs/setores_leste.svg" height="200px">`
+            imagemSetor.src = "";
+            imagemSetor.src = "../assets/imgs/setores/setores_visitante.png";
         }
 
         else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "sim") {
-            div_resultado_conferir.innerHTML = ''
-            div_resultado_conferir.innerHTML = 'O melhor setor para você é o norte'
+            div_resultado_conferir.innerHTML = '';
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o norte';
             setorTorcedor = 'norte';
+            imagemSetor.src = "";
+            imagemSetor.src = "../assets/imgs/setores/setores_norte.png";
+
         }
 
         else if (torce == "sim" && nvlPrivacidade == 5 && crianca == "nao" && dinheiro == 1 && visaoCampo == "vertical" && organizadas == "nao") {
-            div_resultado_conferir.innerHTML = ''
-            div_resultado_conferir.innerHTML = 'sul'
+            div_resultado_conferir.innerHTML = '';
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o sul';
             setorTorcedor = 'sul';
+            imagemSetor.src = "";
+            imagemSetor.src = "../assets/imgs/setores/setores_sul.png";
+
         }
 
         else if (torce == "sim" && nvlPrivacidade == 4 && crianca == "sim" && dinheiro == 2 && visaoCampo == "horizontal" && organizadas == "nao") {
-            div_resultado_conferir.innerHTML = ''
-            div_resultado_conferir.innerHTML = 'O melhor setor para você é o leste'
+            div_resultado_conferir.innerHTML = '';
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o leste';
             setorTorcedor = 'leste';
-            imagemSetor.src= "../assets/imgs/setores_leste.svg"
+            imagemSetor.src = "";
+            imagemSetor.src = "../assets/imgs/setores/setores_leste.png";
         }
 
         else if (torce == "sim" && nvlPrivacidade == 3 && crianca == "sim" && dinheiro == 3 && visaoCampo == "horizontal" && organizadas == "nao") {
-            div_resultado_conferir.innerHTML = ''
-            div_resultado_conferir.innerHTML = 'O melhor setor para você é o oeste'
+            div_resultado_conferir.innerHTML = '';
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o oeste';
             setorTorcedor = 'oeste';
+            imagemSetor.src = "";
+            imagemSetor.src = "../assets/imgs/setores/setores_oeste.png";
+
         }
 
         else if (torce == "sim" && nvlPrivacidade == 1 && crianca == "sim" && dinheiro == 5 && visaoCampo == "horizontal" && organizadas == "nao") {
-            div_resultado_conferir.innerHTML = ''
-            div_resultado_conferir.innerHTML = 'O melhor setor para você é o oeste business'
+            div_resultado_conferir.innerHTML = '';
+            div_resultado_conferir.innerHTML = 'O melhor setor para você é o oeste business';
             setorTorcedor = 'oesteB';
+            imagemSetor.src = "";
+            imagemSetor.src = "../assets/imgs/setores/setores_oesteB.png";
+
+        }
+
+        else{
+            imagemSetor.src = "";
+            div_resultado_conferir.innerHTML = 'Não foi possível achar um setor perfeito para você';
         }
 
     }
