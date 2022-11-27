@@ -65,6 +65,18 @@
                     <span class="tipo_campo">E-mail:</span>
                     <input id="email_input" type="text" placeholder="meuemail@gmail.com">
 
+                    <span class="tipo_campo">Logradouro:</span>
+                    <input id="logradouro_input" type="text" placeholder="Rua das Nações">
+
+                    <span class="tipo_campo">Número:</span>
+                    <input id="numero_input" type="number" placeholder="100">
+
+                    <span class="tipo_campo">Bairro:</span>
+                    <input id="bairro_input" type="text" placeholder="Jardim Paulista">
+
+                    <span class="tipo_campo">Cidade:</span>
+                    <input id="cidade_input" type="text" placeholder="São Paulo">
+
                     <span class="tipo_campo">Senha:</span>
                     <input id="senha_input" type="password" placeholder="**********">
 
@@ -96,12 +108,16 @@
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
+        var logradourolVar = logradouro_input.value;
+        var numeroVar = Number(numero_input.value);
+        var bairroVar = bairro_input.value;
+        var cidadeVar = cidade_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || logradourolVar == "" || numeroVar == "" || bairroVar == "" ||cidadeVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Algum campo está em branco";
 
            
             return false;
@@ -121,6 +137,10 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
+                logradouroServer: logradourolVar,
+                numeroServer: numeroVar,
+                bairroServer: bairroVar,
+                cidadeServer: cidadeVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {

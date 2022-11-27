@@ -13,6 +13,16 @@ CREATE TABLE torcedor (
 	senha VARCHAR(50)
 );
 
+CREATE TABLE endereco (
+    idEndereco INT PRIMARY KEY AUTO_INCREMENT,
+    logradouro varchar(50),
+    numero INT,
+    bairro varchar(20),
+    cidade varchar(20),
+    fk_torcedor INT,
+    FOREIGN KEY (fk_torcedor) REFERENCES torcedor(idTorcedor)
+);
+
 CREATE TABLE aviso (
 	idAviso INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),

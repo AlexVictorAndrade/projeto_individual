@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="atualizacaoPeriodica()">
+<body onload="atualizacaoPeriodica(), mudarNomes()">
 
     <!--validarSessao(), (colocar isso dentro do onload dps que tudo estiver pronto)-->
 
@@ -142,17 +142,36 @@
             <div class="botao_conferir_container">
                 <button class="botao_conferir" onclick="conferirTeste(), salvarSetor()">Conferir</button>
             </div>
-            
+
         </div>
     </div>
-    <div class="box_resultado_selects"><h1 class="resultado_selects" id="div_resultado_conferir"></h1></div>
+    <div class="box_resultado_selects">
+        <h1 class="resultado_selects" id="div_resultado_conferir"></h1>
+    </div>
     <div class=boxImg id="boxImg"><img id="imagemSetor" height="500px"></div>
 
 
 </body>
 
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function mudarNomes(){
+        setInterval(intervalo, 20000)
+
+        function intervalo() {
+            var listaNomes = []
+            listaNomes.push(sessionStorage.NOME_USUARIO, 'Corinthiano!', 'Fiel torcedor!', 'capitão!', 'astro!', 'berinjela!', 'bergamota', 'joão', 'vitor', 'aventureiro!')
+            var contador = 0; 
+            while (contador < listaNomes.length) {
+
+                (function (contador) {
+                    setTimeout(()=> {
+                        b_usuario.innerHTML = listaNomes[contador]
+                    }, contador * 2000);
+                }
+                (contador++));
+            }
+        }
+    }
 
     var setorTorcedor = ''
 
@@ -218,7 +237,7 @@
 
         }
 
-        else{
+        else {
             imagemSetor.src = "";
             div_resultado_conferir.innerHTML = 'Não foi possível achar um setor perfeito para você';
         }
@@ -266,18 +285,18 @@
 
         if (setor == 'visitante') {
             cardVisitante.innerHTML = quantidade;
-             
+
         } else if (setor == 'norte') {
             cardNorte.innerHTML = quantidade;
-            
+
         } else if (setor == 'sul') {
             cardSul.innerHTML = quantidade;
-             
+
         } else if (setor == 'leste') {
             cardLeste.innerHTML = quantidade;
         } else if (setor == 'oeste') {
             cardOeste.innerHTML = quantidade;
-        } 
+        }
         else if (setor == 'oesteB') {
             cardOesteB.innerHTML = quantidade;
         }
@@ -305,7 +324,7 @@
 
             if (resposta.ok) {
 
-            atualizacaoPeriodica();
+                atualizacaoPeriodica();
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

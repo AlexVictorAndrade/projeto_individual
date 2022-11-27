@@ -64,19 +64,30 @@ function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
+    var logradouro = req.body.logradouroServer;
+    var numero = req.body.numeroServer;
+    var bairro = req.body.bairroServer;
+    var cidade = req.body.cidadeServer;
+
     var senha = req.body.senhaServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+        res.status(400).send("Seu nome está indefinida!");
     } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Seu email está indefinida!");
+    } else if (logradouro == undefined) {
+        res.status(400).send("Seu logradouro está indefinida!");
+    } else if (numero == undefined) {
+        res.status(400).send("Seu número está indefinido!");
+    } else if (bairro == undefined) {
+        res.status(400).send("Seu bairro está indefinido!");
+    } else if (cidade == undefined) {
+        res.status(400).send("Sua cidade está indefinida!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email, senha, logradouro, numero, bairro, cidade)
             .then(
                 function (resultado) {
                     res.json(resultado);
