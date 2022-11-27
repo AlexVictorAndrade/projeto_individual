@@ -96,8 +96,8 @@ x
   background: #252422ad;
   background-position: center;
   text-align: center;
-  height: 500px;
-  width: 400px;
+  height: 450px;
+  width: 65%;
   display: flex;
   flex-direction: column;
   color: var(--white);
@@ -112,7 +112,7 @@ x
   align-items: center;
   flex-direction: column;
   font-size: 33px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .card {
@@ -139,7 +139,6 @@ button {
 
 .tipo_campo{
   color: var(--white);
-  margin-left: 20px;
 }
 .confirmacao{
 margin-right: 0px !important;
@@ -147,6 +146,10 @@ margin-right: 0px !important;
 
 
 /* FORMULARIO */
+
+.box1{
+  margin-right: 30px;
+}
 
 .alerta_erro{
   display: flex;
@@ -173,7 +176,7 @@ margin-right: 0px !important;
 .formulario{
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   margin-bottom: 2rem;
 }
@@ -203,26 +206,15 @@ input {
 .btn {
   font-family: "Barlow", sans-serif;
   border: 0;
-  border-radius: 25px;
+  border-radius: 40px;
   font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
+  font-size: 24px;
+  padding: 16px 20px;
   color: #252422;
   background-color: var(--white);
-  width: 120px;
+  width: 160px;
   align-self: center;
-  margin-top: 1.5rem;
-
 }
 
-.loading-div {
-  width: 50px;
-  margin: auto;
-  display: none;
-}
 
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
 
