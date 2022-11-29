@@ -159,14 +159,14 @@
 
         function intervalo() {
             var listaNomes = []
-            listaNomes.push(sessionStorage.NOME_USUARIO, 'Corinthiano!', 'Fiel torcedor!', 'capitão!', 'astro!', 'berinjela!', 'bergamota', 'joão', 'vitor', 'aventureiro!')
+            listaNomes.push(sessionStorage.NOME_USUARIO, 'Corinthiano', 'Fiel torcedor', 'Mosqueteiro', 'Torcedor')
             var contador = 0; 
             while (contador < listaNomes.length) {
 
                 (function (contador) {
                     setTimeout(()=> {
                         b_usuario.innerHTML = listaNomes[contador]
-                    }, contador * 2000);
+                    }, contador * 4000);
                 }
                 (contador++));
             }

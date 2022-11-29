@@ -108,7 +108,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid var(--red);
   padding: 20px;
 }
 

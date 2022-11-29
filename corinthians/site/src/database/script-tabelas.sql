@@ -1,7 +1,6 @@
 /*
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
-
 CREATE DATABASE vamos_ver_o_timao;
 
 USE vamos_ver_o_timao;
@@ -49,26 +48,27 @@ select count(fk_torcedor) as quantidade, setor from usuarioSetor where setor = '
 
 insert into torcedor values
 (null, 'a', 'a@', 123),
-(null, 'b', 'a@', 123),
-(null, 'c', 'a@', 123),
-(null, 'a', 'a@', 123),
-(null, 'a', 'a@', 123),
-(null, 'a', 'a@', 123),
-(null, 'a', 'a@', 123),
-(null, 'a', 'a@', 123),
-(null, 'a', 'a@', 123);
+(null, 'bruno', 'b@', 123),
+(null, 'carolina', 'c@', 123),
+(null, 'alexsandro', 'a@', 123),
+(null, 'cristhian', 'c@', 123),
+(null, 'emillie', 'e@', 123),
+(null, 'vinicius', 'v@', 123),
+(null, 'erick', 'e@', 123),
+(null, 'marcos', 'm@', 123),
+(null, 'luan', 'l@', 123);
 
 
 insert into usuarioSetor values
-(null , 'norte' , '3'),
-(null , 'sul' , '4'),
-(null , 'leste' , '5'),
-(null , 'oeste' , '6'),
-(null , 'oesteB' , '7'),
-(null , 'visitante' , '8'),
-(null , 'norte' , '9'),
-(null , 'leste' , '10'),
-(null , 'norte' , '11');
+(null , 'norte' , '1'),
+(null , 'sul' , '2'),
+(null , 'leste' , '3'),
+(null , 'oeste' , '4'),
+(null , 'oesteB' , '5'),
+(null , 'visitante' , '6'),
+(null , 'norte' , '7'),
+(null , 'leste' , '8'),
+(null , 'norte' , '9');
 
 SELECT 
             a.idAviso AS idAviso,
