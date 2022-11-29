@@ -47,7 +47,7 @@ select count(fk_torcedor) as quantidade, setor from usuarioSetor  group by setor
 select count(fk_torcedor) as quantidade, setor from usuarioSetor where setor = 'visitante';
 
 insert into torcedor values
-(null, 'a', 'a@', 123),
+(null, 'Alex', 'a@', 123),
 (null, 'bruno', 'b@', 123),
 (null, 'carolina', 'c@', 123),
 (null, 'alexsandro', 'a@', 123),
@@ -55,9 +55,10 @@ insert into torcedor values
 (null, 'emillie', 'e@', 123),
 (null, 'vinicius', 'v@', 123),
 (null, 'erick', 'e@', 123),
-(null, 'marcos', 'm@', 123),
 (null, 'luan', 'l@', 123);
 
+insert into aviso VALUES
+(null, 'Minha experiência no setor norte do estádio', 'Foi no último corinthians x são paulo neste domingo, eu segui as intruções da plataforma e fui para o setor norte. Estar com as organizadas foi incrível, com certeza voltarei ao estádio!', '1');
 
 insert into usuarioSetor values
 (null , 'norte' , '1'),
